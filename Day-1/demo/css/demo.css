@@ -1,0 +1,10 @@
+h1{
+    align-items: center;
+    background-color: beige;
+    color: blue;
+    font-size:xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 500;
+    text-shadow: 5px 5px 5px rgb(157, 209, 192);
+}
