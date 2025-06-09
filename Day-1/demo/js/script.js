@@ -33,7 +33,7 @@
  Hello ="<font color=purple><br> Hello welcome to the javascript session-2</font>"
  document.write(Hello);
 
- MyName = "Kajal Mishra"; /** outpur (Kajal Mishra ) */
+ MyName = "Kajal Mishra"; /** output (Kajal Mishra ) */
  console.write(myName)
 
 
