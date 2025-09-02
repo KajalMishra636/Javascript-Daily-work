@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyShop - Product Showcase</title>
+
+  <!-- ================= Favicon ================= -->
+  <link rel="icon" type="image/png" href="https://via.placeholder.com/32x32.png" />
+
+  <!-- ================= Bootstrap CSS ================= -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ================= Google Fonts ================= -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- ================= Bootstrap Icons ================= -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ================= Custom CSS ================= -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, #36d1dc, #5b86e5);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: white !important;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    /* Dark Mode Styling */
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #f1f1f1 !important;
+    }
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: white;
+    }
+    .dark-mode .navbar,
+    .dark-mode .footer {
+      background: linear-gradient(90deg, #000000, #434343);
+    }
+
+    /* Product Card Styling */
+    .card {
+      border: none;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-buy {
+      background: #ff416c;
+      color: white;
+      border: none;
+      transition: background 0.3s;
+    }
+    .btn-buy:hover {
+      background: #ff4b2b;
+    }
+
+    /* Footer Styling */
+    .footer {
+      background: linear-gradient(90deg, #ff416c, #ff4b2b);
+      color: white;
+    }
+    .footer a {
+      color: #f1f1f1;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: #ffd700;
+    }
+    .footer .btn-subscribe {
+      background: #36d1dc;
+      color: white;
+      border: none;
+    }
+    .footer .btn-subscribe:hover {
+      background: #5b86e5;
+    }
+    .footer .social-links a {
+      font-size: 1.5rem;
+      margin-right: 12px;
+      color: white;
+      transition: color 0.3s;
+    }
+    .footer .social-links a:hover {
+      color: #ffd700;
+    }
+
+    /* Thank You Message Styling */
+    #thankYouMsg {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #36d1dc;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
+      font-weight: bold;
+      transition: all 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <!-- Logo + Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="" alt="" class="me-2 rounded">my shop
+      
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+        <button class="btn btn-dark ms-3" id="darkModeBtn">Dark Mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN SECTION ================= -->
+  <div class="container my-5">
+    <div class="row g-4">
+
+      <!-- ================= Product Cards ================= -->
+      <div class="col-md-4" data-product="Smartphone X" data-price="799">
+        <div class="card p-3 text-center">
+          <img src="./image/1.png" class="card-img-top rounded" alt="Smartphone X">
+          <div class="card-body">
+            <h5 class="card-title">Smartphone X</h5>
+            <p class="card-text">A high-performance smartphone with cutting-edge features and sleek design.</p>
+            <p class="fw-bold">$799</p>
+            <input type="text" class="form-control mb-2" placeholder="Enter Your Name" id="user-Smartphone X">
+            <input type="number" min="1" value="1" class="form-control mb-2" id="quantity-Smartphone X">
+            <button class="btn btn-buy" onclick="buyProduct('Smartphone X')">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-product="Wireless Headphones" data-price="199">
+        <div class="card p-3 text-center">
+          <img src="./image/2.png" class="card-img-top rounded" alt="Wireless Headphones">
+          <div class="card-body">
+            <h5 class="card-title">Wireless Headphones</h5>
+            <p class="card-text">Enjoy premium sound quality with noise cancellation and long battery life.</p>
+            <p class="fw-bold">$199</p>
+            <input type="text" class="form-control mb-2" placeholder="Enter Your Name" id="user-Wireless Headphones">
+            <input type="number" min="1" value="1" class="form-control mb-2" id="quantity-Wireless Headphones">
+            <button class="btn btn-buy" onclick="buyProduct('Wireless Headphones')">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-product="Smartwatch Pro" data-price="299">
+        <div class="card p-3 text-center">
+          <img src="image/3.png" class="card-img-top rounded" alt="Smartwatch Pro">
+          <div class="card-body">
+            <h5 class="card-title">Smartwatch Pro</h5>
+            <p class="card-text">Track your fitness, receive notifications, and stay connected on the go.</p>
+            <p class="fw-bold">$299</p>
+            <input type="text" class="form-control mb-2" placeholder="Enter Your Name" id="user-Smartwatch Pro">
+            <input type="number" min="1" value="1" class="form-control mb-2" id="quantity-Smartwatch Pro">
+            <button class="btn btn-buy" onclick="buyProduct('Smartwatch Pro')">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= Buy Counter ================= -->
+    <div class="text-center mt-4">
+      <h5>Total Products Interested: <span id="buyCounter">0</span></h5>
+      <h5>Total Cart Value: $<span id="totalCartValue">0</span></h5>
+    </div>
+
+    <!-- ================= Purchase Details Table ================= -->
+    <div class="mt-4">
+      <h5>Purchase Details</h5>
+      <table class="table table-bordered table-striped text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>User</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="purchaseTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer mt-5">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">MyShop</h5>
+          <p>Your one-stop shop for the latest gadgets and tech accessories. Quality you can trust.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="footer-link">Home</a></li>
+            <li><a href="#" class="footer-link">Products</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Stay Connected</h5>
+          <form class="d-flex mb-3">
+            <input type="email" class="form-control me-2" placeholder="Enter your email">
+            <button class="btn btn-subscribe">Subscribe</button>
+          </form>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center pt-3 border-top mt-4">
+        <p class="mb-0">© 2025 MyShop. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= Floating Thank You Message ================= -->
+  <div id="thankYouMsg"></div>
+
+  <!-- ================= Bootstrap JS ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ================= Custom JavaScript ================= -->
+  <script>
+    let counter = 0;
+    let totalCart = 0;
+    let purchaseDetails = [];
+
+    function buyProduct(productName) {
+      let userName = document.getElementById(`user-${productName}`).value.trim();
+      let quantity = parseInt(document.getElementById(`quantity-${productName}`).value);
+      if (!userName || quantity <= 0) {
+        alert("Please enter a valid name and quantity!");
+        return;
+      }
+
+      let productCard = document.querySelector(`[data-product='${productName}']`);
+      let price = parseFloat(productCard.dataset.price);
+
+      let existing = purchaseDetails.find(item => item.user === userName && item.product === productName);
+      if (existing) {
+        existing.quantity += quantity;
+      } else {
+        purchaseDetails.push({user: userName, product: productName, price: price, quantity: quantity});
+      }
+
+      counter += quantity;
+      document.getElementById("buyCounter").innerText = counter;
+      updateTable();
+
+      // Show Thank You message
+      let msgDiv = document.getElementById("thankYouMsg");
+      msgDiv.innerText = `Thank you ${userName}! You added ${quantity} x ${productName} to your cart.`;
+      msgDiv.style.display = "block";
+      setTimeout(() => { msgDiv.style.display = "none"; }, 3000);
+
+      // Clear inputs
+      document.getElementById(`user-${productName}`).value = '';
+      document.getElementById(`quantity-${productName}`).value = 1;
+    }
+
+    function updateTable() {
+      let tableBody = document.getElementById("purchaseTableBody");
+      tableBody.innerHTML = "";
+      totalCart = 0;
+
+      purchaseDetails.forEach((item, index) => {
+        let total = item.price * item.quantity;
+        totalCart += total;
+        tableBody.innerHTML += `
+          <tr>
+            <td>${item.user}</td>
+            <td>${item.product}</td>
+            <td>$${item.price}</td>
+            <td>${item.quantity}</td>
+            <td>$${total}</td>
+            <td><button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Remove</button></td>
+          </tr>
+        `;
+      });
+      document.getElementById("totalCartValue").innerText = totalCart;
+    }
+
+    function removeItem(index) {
+      counter -= purchaseDetails[index].quantity;
+      purchaseDetails.splice(index, 1);
+      document.getElementById("buyCounter").innerText = counter;
+      updateTable();
+    }
+
+    document.getElementById("darkModeBtn").addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+      this.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+    });
+  </script>
+</body>
+</html>
