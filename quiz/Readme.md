@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="50" height="50" alt="food-logo" src="https://github.com/user-attachments/assets/61d628c4-1c24-4849-ac95-66265b1d98fd" />
+  <img width="50" height="50" alt="food-logo" src= />
   <img width="100" height="100" alt="food-banner" src="https://github.com/user-attachments/assets/37529373-9013-485f-a9ea-c2f914d32029" />
 </p>
 
