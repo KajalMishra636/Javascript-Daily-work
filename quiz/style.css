@@ -1,0 +1,97 @@
+ 
+    :root {
+      --primary-color: #ff5722;
+      --dark-color: #343a40;
+      --light-color: #f8f9fa;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+    }
+    .navbar {
+      background-color: var(--dark-color);
+    }
+    .navbar-brand,
+    .nav-link,
+    .nav-link:hover {
+      color: var(--light-color) !important;
+    }
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    .btn-primary:hover {
+      background-color: #e64a19;
+      border-color: #e64a19;
+    }
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-item {
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .carousel-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .carousel-caption {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .carousel-captain h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .carousel-caption p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .category-card img {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+    .food-card img {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+    footer {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      padding: 40px 0;
+    }
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    section {
+      scroll-margin-top: 80px; /* For smooth scrolling */
+    }
+    .order-btn:hover {
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .carousel-caption h1 {
+        font-size: 2rem;
+      }
+      .carousel-caption p {
+        font-size: 1rem;
+      }
+    }
