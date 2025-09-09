@@ -112,6 +112,4 @@ This project is licensed under the MIT License.
 ---
 
 <p align="center">
-  Inspired by <a href="https://www.swiggy.com/" target="_blank">Swiggy</a> & <a href="https://www.zomato.com/" target="_blank">Zomato</a> • Built for learning and fun!
-</p>
-
+  Inspired by <a href="https://www.swiggy.com/" target="_blank">Swiggy</a> & <a href="https://www.zomato.com/" target="_blank">Zomato</a> • Built for learning
