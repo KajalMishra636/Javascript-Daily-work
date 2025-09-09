@@ -1,6 +1,6 @@
 <p align="center">
-  <img width="50" height="50" alt="food-logo" src=![logo](https://github.com/user-attachments/assets/298a9d49-8388-48fb-9b62-6d203c73e5c7)
- />
+  <img width="50" height="50" alt="food-logo" src=![logo](https://github.com/user-attachments/assets/50183200-54e0-497b-9ec7-52cd3dd800fe)
+>
   <img width="100" height="100" alt="food-banner" src="https://github.com/user-attachments/assets/37529373-9013-485f-a9ea-c2f914d32029" />
 </p>
 
